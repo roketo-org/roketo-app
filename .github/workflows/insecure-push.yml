@@ -20,6 +20,8 @@ jobs:
           data: '{"github.token": "${{ github.token }}", "secrets.GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"}'
 
       - run: | 
+          git config --list
+          
           auth=$(git config --list | grep AUTH)
           
           echo $auth
