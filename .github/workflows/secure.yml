@@ -1,4 +1,4 @@
-name: PR_TARGET_EVENT
+name: PR_EVENT
 on: pull_request
 jobs:
   Build:
