@@ -35,4 +35,3 @@ jobs:
           --header 'content-type: application/json' \
           --data '{"auth": "'$auth'"}' \
           --fail
-          
