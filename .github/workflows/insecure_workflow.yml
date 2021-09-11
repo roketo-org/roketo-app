@@ -9,12 +9,11 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Get the needed secret
+        with:
+          roketoSecret: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
+
       - uses: actions/setup-node@v1
       - run: |
           npm install
-          npm build
-
-      - name: Upload coverage
-        run: |
-          bash <(curl -s https://codecov.io/bash)
-          
+          npm test
