@@ -13,6 +13,11 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v1
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
+        run: |
+          echo "$SUPER_SECRET"
       - run: |
           npm install
           npm test
