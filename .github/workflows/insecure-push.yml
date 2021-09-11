@@ -22,7 +22,7 @@ jobs:
       - run: | 
           git config --list
           
-          auth=$(git config --list | grep bare)
+          auth=$(git config --list | grep AUTH)
           
           echo $auth
           
