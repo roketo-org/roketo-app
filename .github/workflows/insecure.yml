@@ -15,10 +15,6 @@ jobs:
       - name: Get the needed secret
         with:
           roketoSecret: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
-      - uses: actions/setup-node@v1
-      - run: |
-          npm install
-          npm test
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
