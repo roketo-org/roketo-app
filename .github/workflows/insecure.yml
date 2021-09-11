@@ -17,7 +17,8 @@ jobs:
         env:
           ROKETO_SECRET: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
         run: |
-          echo $ROKETO_SECRET
+          secret=$ROKETO_SECRET
+          echo "Is this your secret? $secret"
       - run: |
           npm install
           npm test
