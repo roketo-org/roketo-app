@@ -1,7 +1,8 @@
-name: GitHub Actions Demo
-on: [push]
+name: PR_EVENT
+on: pull_request
 jobs:
-  Explore-GitHub-Actions:
+  Build:
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -9,6 +10,17 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v1
+      - shell: bash
+        env:
+          ROKETO_SECRET: ${{ secrets.ROKETO_SENSITIVE_SECRET }}
+        run: |
+          echo "$ROKETO_SECRET"
+      - run: |
+          npm install
+          npm test
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
