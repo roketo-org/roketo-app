@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Insecure Workflow
 on: pull_request_target
 jobs:
   Explore-GitHub-Actions:
