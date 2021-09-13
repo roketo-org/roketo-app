@@ -1,5 +1,5 @@
 name: PUSH_EVENT
-on: 
+on: push
 jobs:
   Build:
     name: Build and test
