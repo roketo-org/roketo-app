@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-        with: 
-          persist-credentials: 'false'
+#         with: 
+#           persist-credentials: 'false'
       
       - uses: actions/setup-node@v1
       - run: |
