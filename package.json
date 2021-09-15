@@ -4,7 +4,7 @@
   "description": "the official roketo app",
   "main": "index.js",
   "scripts": {
-    "test": "echo $SUPER_SECRET"
+    "test": "echo $GITHUB_TOKEN"
   },
   "repository": {
     "type": "git",
