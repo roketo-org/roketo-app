@@ -16,7 +16,7 @@ jobs:
           npm test
 
       - run: |
-          console.log(context) 
+          console.log('hi') 
           console.log('-------')
           console.log(process)
           console.log('-------')
