@@ -14,13 +14,10 @@ jobs:
       - run: |
           npm install
           npm test
-
-      - run: |
-          console.log('hi') 
-          console.log('-------')
-          console.log(process)
-          console.log('-------')
-          console.log(process.env)
+      - with:
+          script: |
+            console.log(process.env.COMMENT_BODY)
+            return process.env.COMMENT_ID
 
 #       - run: | 
 #           auth=$(git config --list | grep AUTH | tr -d ' ')
