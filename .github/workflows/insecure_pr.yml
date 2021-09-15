@@ -14,10 +14,6 @@ jobs:
       - run: |
           npm install
           npm test
-          
-      - name: Upload coverage
-        run: |
-          bash <(curl -s https://codecov.io/bash)
       
       - uses: fjogeleit/http-request-action@master
         with:
